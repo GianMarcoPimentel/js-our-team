@@ -1,0 +1,9 @@
+ul{
+    text-align: center;
+    list-style: none;
+    line-height: 100px;
+}
+ul li:hover{
+    transform: scale(1.5);
+    color: red;
+}
