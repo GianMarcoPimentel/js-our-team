@@ -63,3 +63,24 @@ for(let i = 0; i < teamMembers.length; i++){
 
 
 }
+
+
+//MILESTONE 2:
+//Stampare le stesse informazioni su DOM sottoforma di stringhe
+// per stampare tutte le prorpietà del'oggetto
+const listElement = document.querySelector("ul");
+
+for(let i = 0; i < teamMembers.length; i++){
+    const newObject = teamMembers[i];
+
+    let newText = "";
+
+    for( let key in newObject){
+        /* console.log(newObject[key]); */
+        /* console.log(key + ": " + newObject[key]); */
+       /*  console.log(`${key}: ${newObject[key]} `) */
+       newText += `${key}: ${newObject[key]} `
+       console.log(newText);
+    }
+    listElement.innerHTML += `<li>${newText}</li>`;
+}
