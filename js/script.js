@@ -62,7 +62,7 @@ for(let i = 0; i < teamMembers.length; i++){
 
 
 
-}
+}   
 
 
 //MILESTONE 2:
