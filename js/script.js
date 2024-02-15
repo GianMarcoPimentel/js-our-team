@@ -107,18 +107,21 @@ for(let i = 0; i < teamMembers.length; i++){
       
        for( let key in newObject){
 
+           const listItemsElement = document.createElement("li");
+
             if(key != 'foto'){
-                const listItemsElement = document.createElement("li");
                 listItemsElement.innerText +=`${key}: ${newObject[key]}`
-                listElement.append(listItemsElement);
+                
             }else{
                 //crearmi elemento img
                 const listImageElement = document.createElement("img");
-                console.log(listImageElement)
+                //console.log(listImageElement)
                 listImageElement.src = "./img/" +newObject.foto;
                 listImageElement.alt = "immagine membro";
-                listElement.append(listImageElement);
+                listItemsElement.append(listImageElement);;
             } 
+            
+            listElement.append(listItemsElement);
        }
        console.log(listElement);
      
