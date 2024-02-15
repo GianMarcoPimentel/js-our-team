@@ -74,7 +74,7 @@ for(let i = 0; i < teamMembers.length; i++){
 //MILESTONE 2:
 //Stampare le stesse informazioni su DOM sottoforma di stringhe
 // per stampare tutte le prorpietà del'oggetto
-const memberElement = document.querySelector("#member");
+/* const memberElement = document.querySelector("#member");
 
 for(let i = 0; i < teamMembers.length; i++){
     //apro una lista in pagina
@@ -89,16 +89,42 @@ for(let i = 0; i < teamMembers.length; i++){
        listElement.append(listItemsElement);
     }
     console.log(listElement);
-   /*  const memberElement = document.querySelector("#member"); */
+  
     //aggiungo gli elementi alla lista
     memberElement.append(listElement);
-}
+} */
 
 //BONUS 1:
 //Trasformare la stringa foto in una immagine effettiva
     // se la key è la foto ci aggiungo un elemento <img> in pagina
    // const listItemElement = document.createElement("li");
+   const memberElement = document.querySelector("#member");
 
+   for(let i = 0; i < teamMembers.length; i++){
+       //apro una lista in pagina
+       const listElement = document.createElement("ul");
+       const newObject = teamMembers[i];
+      
+       for( let key in newObject){
+
+            if(key != 'foto'){
+                const listItemsElement = document.createElement("li");
+                listItemsElement.innerText +=`${key}: ${newObject[key]}`
+                listElement.append(listItemsElement);
+            }else{
+                //crearmi elemento img
+                const listImageElement = document.createElement("img");
+                console.log(listImageElement)
+                listImageElement.src = "./img/" +newObject.foto;
+                listImageElement.alt = "immagine membro";
+                listElement.append(listImageElement);
+            } 
+       }
+       console.log(listElement);
+     
+       //aggiungo gli elementi alla lista
+       memberElement.append(listElement);
+   }
 /*     if (key != 'foto'){
         listItemElement.innerHTML = `${key}: ${newObject[key]} `;
        // listItemElement.append(listElement);
