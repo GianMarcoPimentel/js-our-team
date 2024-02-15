@@ -74,26 +74,30 @@ for(let i = 0; i < teamMembers.length; i++){
 //MILESTONE 2:
 //Stampare le stesse informazioni su DOM sottoforma di stringhe
 // per stampare tutte le prorpietà del'oggetto
-const listElement = document.querySelector("ul");
+const memberElement = document.querySelector("#member");
 
 for(let i = 0; i < teamMembers.length; i++){
+    //apro una lista in pagina
+    const listElement = document.createElement("ul");
     const newObject = teamMembers[i];
-
-    let newText = "";
-
+   
     for( let key in newObject){
-       
-       newText += `${key}: ${newObject[key]} `
        console.log(`${key}: ${newObject[key]} `);
+       //memberElement.innerHTML += `<li>${key}: ${newObject[key]}</li>`;
+       const listItemsElement = document.createElement("li");
+       listItemsElement.innerText +=`${key}: ${newObject[key]}`
+       listElement.append(listItemsElement);
     }
-    console.log("-----------");
-    listElement.innerHTML += `<li>${newText}</li>`;
+    console.log(listElement);
+   /*  const memberElement = document.querySelector("#member"); */
+    //aggiungo gli elementi alla lista
+    memberElement.append(listElement);
 }
 
 //BONUS 1:
 //Trasformare la stringa foto in una immagine effettiva
     // se la key è la foto ci aggiungo un elemento <img> in pagina
-    const listItemElement = document.createElement("li");
+   // const listItemElement = document.createElement("li");
 
 /*     if (key != 'foto'){
         listItemElement.innerHTML = `${key}: ${newObject[key]} `;
