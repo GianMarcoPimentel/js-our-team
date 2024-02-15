@@ -12,8 +12,8 @@ Angela Lopez	 Social Media Manager 	 angela-lopez-social-media-manager.jpg
 Scott Estrada	 Developer	             scott-estrada-developer.jpg
 Barbara Ramos	 Graphic Designer	     barbara-ramos-graphic-designer.jpg
 
-*/
 
+ */
 //MILESTONE 0:
 //Creare l’array di oggetti con le informazioni fornite.
 const teamMembers = [
@@ -56,10 +56,16 @@ console.log(teamMembers);
 
 
 for(let i = 0; i < teamMembers.length; i++){
-    console.log(teamMembers[i].nome);
-    console.log(teamMembers[i].ruolo);
-    console.log(teamMembers[i].foto);
 
+   /*  console.log(teamMembers[i].nome);
+    console.log(teamMembers[i].ruolo);
+    console.log(teamMembers[i].foto); */
+    /* 
+    const actualMember = teamMembers[i]
+    console.log(acqtualMember.nome)
+    console.log(acqtualMember.ruolo)
+    console.log(acqtualMember.foto)
+    */
 
 
 }   
@@ -76,11 +82,31 @@ for(let i = 0; i < teamMembers.length; i++){
     let newText = "";
 
     for( let key in newObject){
-        /* console.log(newObject[key]); */
-        /* console.log(key + ": " + newObject[key]); */
-       /*  console.log(`${key}: ${newObject[key]} `) */
+       
        newText += `${key}: ${newObject[key]} `
-       console.log(newText);
+       console.log(`${key}: ${newObject[key]} `);
     }
+    console.log("-----------");
     listElement.innerHTML += `<li>${newText}</li>`;
 }
+
+//BONUS 1:
+//Trasformare la stringa foto in una immagine effettiva
+    // se la key è la foto ci aggiungo un elemento <img> in pagina
+    const listItemElement = document.createElement("li");
+
+/*     if (key != 'foto'){
+        listItemElement.innerHTML = `${key}: ${newObject[key]} `;
+       // listItemElement.append(listElement);
+    } else{
+        const listImageElement = document.createElement("img");
+        //specifico il percordo relativo partendo dal file index.html
+        listImageElement.src = "./img" + newObject.foto;
+        //imposto l'attributom tag
+        listImageElement.alt = "immagine membro";
+        listItemElement.append(listImageElement);
+    }
+    listElement.append(listImageElement); */
+
+//BONUS 2:
+//Organizzare i singoli membri in card/schede
