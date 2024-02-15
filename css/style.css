@@ -1,9 +1,41 @@
-/* #member li{
+body{
+    font-family: sans-serif;
+}
+#member {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+#member section {
+    display: flex;
+    flex-flow: column;
+
+    width: calc(100% / 3 - 20px / 3 * 2);
+
+    padding: 20px;
+
     text-align: center;
-    list-style: none;
-    line-height: 100px;
-} */
-ul li:hover{
-    transform: scale(1.5);
-    color: red;
-}   
+
+    background-color: white;
+
+    box-shadow: 2px 8px 8px rgba(0,0,0,0.2);
+}
+
+section img {
+    order: -1;
+
+    width: 100%;
+
+    margin-bottom: 1em;
+}
+
+section .nome {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: serif;
+    color: #555;
+}

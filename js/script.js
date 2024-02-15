@@ -98,7 +98,7 @@ for(let i = 0; i < teamMembers.length; i++){
 //Trasformare la stringa foto in una immagine effettiva
     // se la key è la foto ci aggiungo un elemento <img> in pagina
    // const listItemElement = document.createElement("li");
-   const memberElement = document.querySelector("#member");
+/*    const memberElement = document.querySelector("#member");
 
    for(let i = 0; i < teamMembers.length; i++){
        //apro una lista in pagina
@@ -120,26 +120,46 @@ for(let i = 0; i < teamMembers.length; i++){
                 listImageElement.alt = "immagine membro";
                 listItemsElement.append(listImageElement);;
             } 
-            
+
             listElement.append(listItemsElement);
        }
        console.log(listElement);
      
        //aggiungo gli elementi alla lista
        memberElement.append(listElement);
-   }
-/*     if (key != 'foto'){
-        listItemElement.innerHTML = `${key}: ${newObject[key]} `;
-       // listItemElement.append(listElement);
-    } else{
-        const listImageElement = document.createElement("img");
-        //specifico il percordo relativo partendo dal file index.html
-        listImageElement.src = "./img" + newObject.foto;
-        //imposto l'attributom tag
-        listImageElement.alt = "immagine membro";
-        listItemElement.append(listImageElement);
-    }
-    listElement.append(listImageElement); */
+   } */
 
 //BONUS 2:
 //Organizzare i singoli membri in card/schede
+   const memberElement = document.querySelector("#member");
+
+   for(let i = 0; i < teamMembers.length; i++){
+       //apro una lista in pagina
+       const singleMemberElement = document.createElement("section");
+       
+       const newObject = teamMembers[i];
+      
+       for( let key in newObject){
+
+           const memberDetailElement = document.createElement("div");
+           
+            if(key != 'foto'){
+                memberDetailElement.innerText +=`${key}: ${newObject[key]}`
+                
+            }else{
+                //crearmi elemento img
+                const listImageElement = document.createElement("img");
+                //console.log(listImageElement)
+                listImageElement.src = "./img/" +newObject.foto;
+                listImageElement.alt = "immagine membro";
+                //aggiungo alla section e non al div
+                singleMemberElement.append(listImageElement);;
+            } 
+            
+            singleMemberElement.append(memberDetailElement);
+       }
+       console.log(singleMemberElement);
+     
+       //aggiungo gli elementi alla lista
+       memberElement.append(singleMemberElement);
+   }
